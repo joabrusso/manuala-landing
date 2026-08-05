@@ -3,26 +3,29 @@ const APP_URL = "https://use.manuala.app";
 const FEATURES = [
   {
     tone: "coral",
-    title: "Grabá y listo",
+    illustration: "/illustrations/feature-record.svg",
+    title: "Capturá el proceso",
     body: "Grabás la pantalla haciendo el proceso una vez; la IA arma los pasos, con las capturas reales incluidas.",
   },
   {
     tone: "berry",
+    illustration: "/illustrations/feature-assign.svg",
     title: "Asigná en un clic",
     body: "Por rol o por persona, con vencimiento y un quiz de comprensión si hace falta confirmar que quedó claro.",
   },
   {
     tone: "mustard",
-    title: "Sabé quién lo hizo",
+    illustration: "/illustrations/feature-track.svg",
+    title: "Seguí el cumplimiento",
     body: "Progreso real por empleado, no una carpeta compartida en Drive que nadie termina de leer.",
   },
 ] as const;
 
 const STEPS = [
-  { n: "01", title: "Grabás o subís", body: "La pantalla haciendo el proceso, o un Word / Excel / PDF que ya tengas." },
-  { n: "02", title: "La IA arma los pasos", body: "Con las capturas del proceso ya insertadas donde corresponden." },
-  { n: "03", title: "Asignás", body: "A un rol completo o a una persona puntual, con fecha de vencimiento." },
-  { n: "04", title: "Controlás", body: "Quién lo leyó, quién lo completó y quién aprobó el quiz." },
+  { title: "Grabás o subís", body: "La pantalla haciendo el proceso, o un Word / Excel / PDF que ya tengas." },
+  { title: "La IA arma los pasos", body: "Con las capturas del proceso ya insertadas donde corresponden." },
+  { title: "Asignás", body: "A un rol completo o a una persona puntual, con fecha de vencimiento." },
+  { title: "Controlás", body: "Quién lo leyó, quién lo completó y quién aprobó el quiz." },
 ] as const;
 
 const toneClasses: Record<string, string> = {
@@ -111,10 +114,8 @@ export default function LandingPage() {
                 key={f.title}
                 className="rounded-3xl border border-ink/10 p-7 shadow-[0_1px_2px_rgba(28,27,24,0.04),0_8px_24px_rgba(28,27,24,0.05)]"
               >
-                <div className={`mb-5 flex h-12 w-12 items-center justify-center rounded-2xl ${toneClasses[f.tone]}`}>
-                  <span aria-hidden className="text-xl">
-                    {f.tone === "coral" ? "✎" : f.tone === "berry" ? "◒" : "✓"}
-                  </span>
+                <div className={`mb-5 flex h-20 w-20 items-center justify-center rounded-2xl ${toneClasses[f.tone]}`}>
+                  <img src={f.illustration} alt="" className="h-14 w-14" />
                 </div>
                 <h3 className="font-heading text-lg font-bold">{f.title}</h3>
                 <p className="mt-2 text-sm text-ink-muted">{f.body}</p>
@@ -124,21 +125,30 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ---------- Cómo funciona (oscura) ---------- */}
+      {/* ---------- Cómo funciona (oscura, split) ---------- */}
       <section id="como-funciona" className="bg-ink py-20 text-paper-0 sm:py-28">
-        <div className="mx-auto max-w-6xl px-6">
-          <p className="mb-3 text-xs font-bold tracking-wide text-mustard uppercase">Cómo funciona</p>
-          <h2 className="font-heading max-w-lg text-3xl font-extrabold tracking-tight text-balance sm:text-4xl">
-            De la pantalla al proceso documentado, en minutos
-          </h2>
-          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {STEPS.map((s) => (
-              <div key={s.n}>
-                <div className="font-heading mb-2 text-2xl font-extrabold text-mustard">{s.n}</div>
-                <h3 className="font-semibold">{s.title}</h3>
-                <p className="mt-1 text-sm text-white/60">{s.body}</p>
-              </div>
-            ))}
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-14 px-6 lg:flex-nowrap">
+          <div className="max-w-md">
+            <p className="mb-3 text-xs font-bold tracking-wide text-mustard uppercase">Cómo funciona</p>
+            <h2 className="font-heading text-3xl font-extrabold tracking-tight text-balance sm:text-4xl">
+              De la pantalla al proceso documentado, en minutos
+            </h2>
+            <ul className="mt-8 space-y-5">
+              {STEPS.map((s) => (
+                <li key={s.title} className="flex gap-3">
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-mustard text-xs font-bold text-ink">
+                    ✓
+                  </span>
+                  <div>
+                    <h3 className="font-semibold">{s.title}</h3>
+                    <p className="mt-0.5 text-sm text-white/60">{s.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="mx-auto w-full max-w-md rounded-3xl bg-paper-0 p-8 lg:mx-0">
+            <img src="/illustrations/how-it-works.svg" alt="" className="w-full" />
           </div>
         </div>
       </section>
@@ -168,26 +178,33 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ---------- CTA final ---------- */}
-      <section className="bg-paper-0 py-20 text-center sm:py-28">
-        <div className="mx-auto max-w-2xl px-6">
-          <h2 className="font-heading text-3xl font-extrabold tracking-tight text-balance sm:text-4xl">
-            Empezá a documentar hoy
-          </h2>
-          <p className="mt-3 text-ink-muted">Sin tarjeta de crédito. Tu primer proceso, listo en minutos.</p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a
-              href={APP_URL}
-              className="rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-white hover:bg-ink-muted"
-            >
-              Empezar gratis
-            </a>
-            <a
-              href="mailto:hola@manuala.app"
-              className="rounded-full border-2 border-ink px-7 py-3.5 text-sm font-semibold hover:bg-ink/5"
-            >
-              Hablar con nosotros
-            </a>
+      {/* ---------- CTA final (banner mostaza) ---------- */}
+      <section className="bg-paper-0 px-6 py-20 sm:py-28">
+        <div className="relative mx-auto flex max-w-6xl flex-wrap items-center gap-10 overflow-hidden rounded-[2.5rem] bg-mustard px-8 py-14 sm:px-14">
+          <img
+            src="/illustrations/cta-highfive.svg"
+            alt=""
+            className="mx-auto hidden w-full max-w-xs shrink-0 sm:block lg:max-w-sm"
+          />
+          <div className="mx-auto max-w-md text-center lg:mx-0 lg:text-left">
+            <h2 className="font-heading text-3xl font-extrabold tracking-tight text-balance sm:text-4xl">
+              Empezá a documentar hoy
+            </h2>
+            <p className="mt-3 text-ink/80">Sin tarjeta de crédito. Tu primer proceso, listo en minutos.</p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
+              <a
+                href={APP_URL}
+                className="rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-white hover:bg-ink-muted"
+              >
+                Empezar gratis
+              </a>
+              <a
+                href="mailto:hola@manuala.app"
+                className="rounded-full border-2 border-ink px-7 py-3.5 text-sm font-semibold hover:bg-ink/5"
+              >
+                Hablar con nosotros
+              </a>
+            </div>
           </div>
         </div>
       </section>
