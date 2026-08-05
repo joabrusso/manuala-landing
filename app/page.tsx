@@ -3,18 +3,21 @@ const APP_URL = "https://use.manuala.app";
 const FEATURES = [
   {
     tone: "coral",
+    tag: "Captura",
     illustration: "/illustrations/feature-record.svg",
     title: "Capturá el proceso",
     body: "Grabás la pantalla haciendo el proceso una vez; la IA arma los pasos, con las capturas reales incluidas.",
   },
   {
     tone: "berry",
+    tag: "Asignación",
     illustration: "/illustrations/feature-assign.svg",
     title: "Asigná en un clic",
     body: "Por rol o por persona, con vencimiento y un quiz de comprensión si hace falta confirmar que quedó claro.",
   },
   {
     tone: "mustard",
+    tag: "Trazabilidad",
     illustration: "/illustrations/feature-track.svg",
     title: "Seguí el cumplimiento",
     body: "Progreso real por empleado, no una carpeta compartida en Drive que nadie termina de leer.",
@@ -112,13 +115,20 @@ export default function LandingPage() {
             {FEATURES.map((f) => (
               <div
                 key={f.title}
-                className="rounded-3xl border border-ink/10 p-7 shadow-[0_1px_2px_rgba(28,27,24,0.04),0_8px_24px_rgba(28,27,24,0.05)]"
+                className="overflow-hidden rounded-3xl border border-ink/10 shadow-[0_1px_2px_rgba(28,27,24,0.04),0_8px_24px_rgba(28,27,24,0.05)]"
               >
-                <div className={`mb-5 flex h-20 w-20 items-center justify-center rounded-2xl ${toneClasses[f.tone]}`}>
-                  <img src={f.illustration} alt="" className="h-14 w-14" />
+                <div className="flex h-40 items-center justify-center bg-paper">
+                  <img src={f.illustration} alt="" className="h-32 w-auto" />
                 </div>
-                <h3 className="font-heading text-lg font-bold">{f.title}</h3>
-                <p className="mt-2 text-sm text-ink-muted">{f.body}</p>
+                <div className="p-7">
+                  <span
+                    className={`inline-block rounded-full px-2.5 py-1 text-[11px] font-bold tracking-wide uppercase ${toneClasses[f.tone]}`}
+                  >
+                    {f.tag}
+                  </span>
+                  <h3 className="font-heading mt-3 text-lg font-bold">{f.title}</h3>
+                  <p className="mt-2 text-sm text-ink-muted">{f.body}</p>
+                </div>
               </div>
             ))}
           </div>
