@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/*
+ * Design system de la landing (manuala.app) -- ver design system completo
+ * en el chat de origen. Hereda ink/paper/mustard de la app real
+ * (use.manuala.app), suma coral/berry como acentos de ilustración solo
+ * para landing.
+ */
+:root {
+  --color-ink: #1c1b18;
+  --color-ink-muted: #4a4740;
+  --color-ink-faint: #8a877e;
+  --color-paper: #f2f1ec;
+  --color-paper-0: #ffffff;
+
+  --color-mustard: #f8c94a;
+  --color-mustard-soft: #fdf0c8;
+  --color-mustard-ink: #8a5b00;
+
+  --color-coral: #ee6a4f;
+  --color-coral-soft: #fce3dc;
+  --color-berry: #d6336c;
+  --color-berry-soft: #fbdce8;
+
+  --color-success: #15803d;
+  --color-success-soft: #dcfce7;
+
+  --font-heading: "Baloo 2", "Fredoka", ui-rounded, "Segoe UI Rounded", system-ui, sans-serif;
+  --font-body: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-ink-muted: var(--color-ink-muted);
+  --color-ink-faint: var(--color-ink-faint);
+  --color-paper: var(--color-paper);
+  --color-paper-0: var(--color-paper-0);
+  --color-mustard: var(--color-mustard);
+  --color-mustard-soft: var(--color-mustard-soft);
+  --color-mustard-ink: var(--color-mustard-ink);
+  --color-coral: var(--color-coral);
+  --color-coral-soft: var(--color-coral-soft);
+  --color-berry: var(--color-berry);
+  --color-berry-soft: var(--color-berry-soft);
+  --color-success: var(--color-success);
+  --color-success-soft: var(--color-success-soft);
+  --font-family-heading: var(--font-heading);
+  --font-family-body: var(--font-body);
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
