@@ -148,6 +148,33 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* ---------- Manuala Chat ---------- */}
+      <section className="bg-paper-0 py-20 sm:py-28">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-14 px-6 lg:flex-nowrap lg:flex-row-reverse">
+          <div className="max-w-md">
+            <p className="mb-3 text-xs font-bold tracking-wide text-mustard-ink uppercase">Manuala Chat</p>
+            <h2 className="font-heading text-3xl font-extrabold tracking-tight text-balance sm:text-4xl">
+              Preguntale a tus procesos, no busques en carpetas
+            </h2>
+            <p className="mt-4 text-ink-muted">
+              Un chat con IA que responde en base a tus SOPs reales — no inventa, busca en lo que ya publicaste. Con
+              memoria de la conversación y tus propias reglas de negocio.
+            </p>
+            <a
+              href="/producto/chat"
+              className="mt-6 inline-block rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white hover:bg-ink-muted"
+            >
+              Conocé Manuala Chat
+            </a>
+          </div>
+          <img
+            src="/illustrations/page-chat.svg"
+            alt=""
+            className="mx-auto hidden w-full max-w-md shrink-0 lg:block"
+          />
+        </div>
+      </section>
+
       {/* ---------- Caso de éxito (split, mostaza pálido) ---------- */}
       <section className="bg-mustard-soft py-20 sm:py-28">
         <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-14 px-6">
