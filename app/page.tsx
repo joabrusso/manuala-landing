@@ -142,10 +142,7 @@ export default function LandingPage() {
               ))}
             </ul>
           </div>
-          <div
-            className="mx-auto w-full max-w-md overflow-hidden bg-paper-0 p-10 lg:mx-0"
-            style={{ borderRadius: "63% 37% 41% 59% / 47% 41% 59% 53%" }}
-          >
+          <div className="mx-auto w-full max-w-md rounded-3xl bg-paper-0 p-8 lg:mx-0">
             <img src="/illustrations/how-it-works.svg" alt="" className="w-full" />
           </div>
         </div>
@@ -153,7 +150,7 @@ export default function LandingPage() {
 
       {/* ---------- Caso de éxito (split, mostaza pálido) ---------- */}
       <section className="bg-mustard-soft py-20 sm:py-28">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-12 px-6 lg:flex-nowrap lg:justify-between">
+        <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-14 px-6">
           <div className="max-w-md">
             <h2 className="font-heading text-2xl font-extrabold text-balance sm:text-3xl">
               Menos &quot;preguntale a Fernanda&quot;
@@ -169,12 +166,10 @@ export default function LandingPage() {
               Empezar gratis
             </a>
           </div>
-          <div className="mx-auto flex w-full max-w-sm items-center gap-6 rounded-3xl bg-paper-0 p-8 shadow-[0_1px_2px_rgba(28,27,24,0.04),0_8px_24px_rgba(28,27,24,0.05)] lg:mx-0">
-            <img src="/illustrations/growth-stat.svg" alt="" className="h-24 w-auto shrink-0" />
-            <div>
-              <div className="font-heading text-5xl font-extrabold text-ink">50%</div>
-              <div className="mt-1 text-sm text-ink-muted">menos tiempo de onboarding</div>
-            </div>
+          <div className="flex w-56 flex-col items-center gap-2 rounded-3xl bg-paper-0 px-8 py-10 text-center shadow-[0_1px_2px_rgba(28,27,24,0.04),0_8px_24px_rgba(28,27,24,0.05)]">
+            <img src="/illustrations/growth-stat.svg" alt="" className="h-28 w-auto" />
+            <div className="font-heading mt-2 text-5xl font-extrabold text-ink">50%</div>
+            <div className="text-sm text-ink-muted">menos tiempo de onboarding</div>
           </div>
         </div>
       </section>
