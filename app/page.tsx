@@ -70,7 +70,7 @@ export default function LandingPage() {
           <div className="flex flex-wrap items-center gap-12 lg:flex-nowrap">
             <div className="max-w-xl">
               <p className="mb-4 inline-block rounded-full bg-white/40 px-3 py-1 text-xs font-bold tracking-wide uppercase">
-                Para pymes de retail y logística
+                Procesos documentados con IA
               </p>
               <h1 className="font-heading text-4xl leading-[1.08] font-extrabold tracking-tight text-balance sm:text-5xl lg:text-6xl">
                 Documentá{" "}
