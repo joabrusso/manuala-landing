@@ -61,33 +61,40 @@ export default function LandingPage() {
             </a>
           </nav>
 
-          <div className="max-w-xl">
-            <p className="mb-4 inline-block rounded-full bg-white/40 px-3 py-1 text-xs font-bold tracking-wide uppercase">
-              Para pymes de retail y logística
-            </p>
-            <h1 className="font-heading text-4xl leading-[1.08] font-extrabold tracking-tight text-balance sm:text-5xl lg:text-6xl">
-              Documentá{" "}
-              <span className="inline-block -rotate-2 rounded-lg bg-ink px-2 text-mustard">una vez</span>, dejá de
-              explicar mil.
-            </h1>
-            <p className="mt-6 max-w-md text-lg text-ink/80">
-              Grabá la pantalla, subí un Word o contale el proceso a la IA — Manuala arma el SOP, lo asigna a tu
-              equipo y controla que lo cumplan.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href={APP_URL}
-                className="rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-white hover:bg-ink-muted"
-              >
-                Empezar gratis
-              </a>
-              <a
-                href="#como-funciona"
-                className="rounded-full border-2 border-ink px-7 py-3.5 text-sm font-semibold hover:bg-ink/5"
-              >
-                Ver cómo funciona
-              </a>
+          <div className="flex flex-wrap items-center gap-12 lg:flex-nowrap">
+            <div className="max-w-xl">
+              <p className="mb-4 inline-block rounded-full bg-white/40 px-3 py-1 text-xs font-bold tracking-wide uppercase">
+                Para pymes de retail y logística
+              </p>
+              <h1 className="font-heading text-4xl leading-[1.08] font-extrabold tracking-tight text-balance sm:text-5xl lg:text-6xl">
+                Documentá{" "}
+                <span className="inline-block -rotate-2 rounded-lg bg-ink px-2 text-mustard">una vez</span>, dejá de
+                explicar mil.
+              </h1>
+              <p className="mt-6 max-w-md text-lg text-ink/80">
+                Grabá la pantalla, subí un Word o contale el proceso a la IA — Manuala arma el SOP, lo asigna a tu
+                equipo y controla que lo cumplan.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href={APP_URL}
+                  className="rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-white hover:bg-ink-muted"
+                >
+                  Empezar gratis
+                </a>
+                <a
+                  href="#como-funciona"
+                  className="rounded-full border-2 border-ink px-7 py-3.5 text-sm font-semibold hover:bg-ink/5"
+                >
+                  Ver cómo funciona
+                </a>
+              </div>
             </div>
+            <img
+              src="/illustrations/hero-process.svg"
+              alt=""
+              className="ml-auto hidden w-full max-w-md shrink-0 lg:block"
+            />
           </div>
         </div>
       </section>
