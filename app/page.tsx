@@ -1,6 +1,7 @@
 import CtaBanner from "@/components/CtaBanner";
 import Blob from "@/components/Blob";
 import Spark from "@/components/Spark";
+import FeatureIcon from "@/components/FeatureIcon";
 import { APP_URL } from "@/lib/nav";
 
 const FEATURES = [
@@ -39,6 +40,45 @@ const toneClasses: Record<string, string> = {
   berry: "bg-berry-soft text-berry",
   mustard: "bg-mustard-soft text-mustard-ink",
 };
+
+const MORE_FEATURES = [
+  {
+    icon: "template",
+    tone: "coral",
+    title: "Plantillas por industria",
+    body: "Empezá con plantillas ya armadas para tu rubro, no una hoja en blanco.",
+  },
+  {
+    icon: "branch",
+    tone: "berry",
+    title: "Pasos condicionales",
+    body: '"Si pasó X, hacé Y": procesos que se adaptan según la respuesta.',
+  },
+  {
+    icon: "quiz",
+    tone: "mustard",
+    title: "Quizzes con IA",
+    body: "Generá un quiz de comprensión en segundos para confirmar que quedó claro.",
+  },
+  {
+    icon: "calendar",
+    tone: "coral",
+    title: "Vencimientos",
+    body: "Ponele fecha límite a cada SOP; el calendario avisa antes de que venza.",
+  },
+  {
+    icon: "link",
+    tone: "berry",
+    title: "Compartí con un link",
+    body: "Un SOP puntual con URL pública, sin pedirle login a nadie.",
+  },
+  {
+    icon: "upload",
+    tone: "mustard",
+    title: "Subí lo que ya tenés",
+    body: "Grabación de pantalla, Word, Excel o PDF — no hace falta empezar de cero.",
+  },
+] as const;
 
 export default function LandingPage() {
   return (
@@ -113,6 +153,22 @@ export default function LandingPage() {
                   </span>
                   <h3 className="font-heading mt-3 text-lg font-bold">{f.title}</h3>
                   <p className="mt-2 text-sm text-ink-muted">{f.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+            {MORE_FEATURES.map((f) => (
+              <div key={f.title} className="flex gap-4">
+                <div
+                  className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${toneClasses[f.tone]}`}
+                >
+                  <FeatureIcon name={f.icon} className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="font-heading text-base font-bold">{f.title}</h3>
+                  <p className="mt-1 text-sm text-ink-muted">{f.body}</p>
                 </div>
               </div>
             ))}
