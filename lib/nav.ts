@@ -13,7 +13,7 @@ export const PRODUCT_LINKS = [
   },
   {
     href: "/producto/chat",
-    label: "Manuala Chat",
+    label: "Manuala AI",
     desc: "Preguntale a tus procesos",
   },
 ] as const;

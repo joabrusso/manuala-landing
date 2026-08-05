@@ -28,7 +28,7 @@ export default function Header() {
     <header className="border-b border-ink/10 bg-paper-0">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
         <Link href="/">
-          <Logo className="text-xl" />
+          <Logo className="text-3xl" />
         </Link>
         <nav className="hidden items-center gap-8 text-sm font-semibold sm:flex">
           <NavDropdown label="Producto" items={PRODUCT_LINKS} />

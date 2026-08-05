@@ -4,8 +4,8 @@ import BenefitList from "@/components/BenefitList";
 import CtaBanner from "@/components/CtaBanner";
 
 export const metadata: Metadata = {
-  title: "Manuala Chat — Manuala",
-  description: "Preguntale a tus procesos en lenguaje natural. Manuala Chat busca en tus SOPs reales y responde con memoria de la conversación.",
+  title: "Manuala AI — Manuala",
+  description: "Preguntale a tus procesos en lenguaje natural. Manuala AI busca en tus SOPs reales y responde con memoria de la conversación.",
 };
 
 const BENEFITS = [
@@ -29,13 +29,13 @@ export default function Page() {
       <PageHero
         eyebrow="Producto"
         title="Preguntale a tus procesos, no busques en carpetas"
-        subtitle="Manuala Chat responde en base a tus SOPs reales, con memoria de la conversación y tus propias reglas de negocio."
+        subtitle="Manuala AI responde en base a tus SOPs reales, con memoria de la conversación y tus propias reglas de negocio."
         illustration="/illustrations/page-chat.svg"
       />
       <BenefitList items={BENEFITS} />
       <CtaBanner
         title="Dejá de repetir la misma explicación"
-        subtitle="Con Manuala Chat, tu equipo pregunta y encuentra la respuesta sola."
+        subtitle="Con Manuala AI, tu equipo pregunta y encuentra la respuesta sola."
       />
     </main>
   );

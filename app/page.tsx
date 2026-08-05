@@ -148,11 +148,11 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ---------- Manuala Chat ---------- */}
+      {/* ---------- Manuala AI ---------- */}
       <section className="bg-paper-0 py-20 sm:py-28">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-14 px-6 lg:flex-nowrap lg:flex-row-reverse">
           <div className="max-w-md">
-            <p className="mb-3 text-xs font-bold tracking-wide text-mustard-ink uppercase">Manuala Chat</p>
+            <p className="mb-3 text-xs font-bold tracking-wide text-mustard-ink uppercase">Manuala AI</p>
             <h2 className="font-heading text-3xl font-extrabold tracking-tight text-balance sm:text-4xl">
               Preguntale a tus procesos, no busques en carpetas
             </h2>
@@ -164,7 +164,7 @@ export default function LandingPage() {
               href="/producto/chat"
               className="mt-6 inline-block rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white hover:bg-ink-muted"
             >
-              Conocé Manuala Chat
+              Conocé Manuala AI
             </a>
           </div>
           <img
