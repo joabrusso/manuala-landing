@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "@/components/Logo";
 import { APP_URL, PRODUCT_LINKS, SOLUTION_LINKS } from "@/lib/nav";
 
 function NavDropdown({ label, items }: { label: string; items: typeof PRODUCT_LINKS | typeof SOLUTION_LINKS }) {
@@ -26,8 +27,8 @@ export default function Header() {
   return (
     <header className="border-b border-ink/10 bg-paper-0">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-        <Link href="/" className="font-heading text-lg font-extrabold">
-          Manuala
+        <Link href="/">
+          <Logo className="text-xl" />
         </Link>
         <nav className="hidden items-center gap-8 text-sm font-semibold sm:flex">
           <NavDropdown label="Producto" items={PRODUCT_LINKS} />

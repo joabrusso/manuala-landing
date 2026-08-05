@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "@/components/Logo";
 import { APP_URL, PRODUCT_LINKS, SOLUTION_LINKS } from "@/lib/nav";
 
 export default function Footer() {
@@ -7,7 +8,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-14">
         <div className="grid gap-10 sm:grid-cols-4">
           <div>
-            <span className="font-heading text-lg font-extrabold">Manuala</span>
+            <Logo className="text-xl" />
             <p className="mt-3 max-w-[220px] text-sm text-ink-muted">
               Documentá procesos con IA y controlá que tu equipo los cumpla.
             </p>
