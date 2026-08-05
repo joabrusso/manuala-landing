@@ -1,4 +1,6 @@
 import CtaBanner from "@/components/CtaBanner";
+import Blob from "@/components/Blob";
+import Spark from "@/components/Spark";
 import { APP_URL } from "@/lib/nav";
 
 const FEATURES = [
@@ -43,8 +45,8 @@ export default function LandingPage() {
     <main>
       {/* ---------- Hero ---------- */}
       <section className="relative overflow-hidden bg-mustard">
-        <div className="pointer-events-none absolute -top-24 -right-16 h-64 w-64 rounded-full bg-white/25" />
-        <div className="pointer-events-none absolute bottom-0 left-[8%] h-32 w-32 rounded-full bg-ink/5" />
+        <Blob className="pointer-events-none absolute -top-20 -right-10 h-72 w-72 text-white/25" />
+        <Blob className="pointer-events-none absolute -bottom-10 left-[6%] h-40 w-40 rotate-45 text-ink/5" />
 
         <div className="relative mx-auto max-w-6xl px-6 pt-16 pb-20 sm:pt-20 sm:pb-28">
           <div className="flex flex-wrap items-center gap-12 lg:flex-nowrap">
@@ -88,9 +90,12 @@ export default function LandingPage() {
       {/* ---------- Features ---------- */}
       <section id="producto" className="bg-paper-0 py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="font-heading max-w-md text-3xl font-extrabold tracking-tight text-balance sm:text-4xl">
-            El know-how de tu equipo, en un solo lugar
-          </h2>
+          <div className="relative inline-block">
+            <Spark className="pointer-events-none absolute -top-5 -left-8 h-6 w-6 -rotate-12 text-coral" />
+            <h2 className="font-heading max-w-md text-3xl font-extrabold tracking-tight text-balance sm:text-4xl">
+              El know-how de tu equipo, en un solo lugar
+            </h2>
+          </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {FEATURES.map((f) => (
               <div
@@ -137,7 +142,10 @@ export default function LandingPage() {
               ))}
             </ul>
           </div>
-          <div className="mx-auto w-full max-w-md rounded-3xl bg-paper-0 p-8 lg:mx-0">
+          <div
+            className="mx-auto w-full max-w-md overflow-hidden bg-paper-0 p-10 lg:mx-0"
+            style={{ borderRadius: "63% 37% 41% 59% / 47% 41% 59% 53%" }}
+          >
             <img src="/illustrations/how-it-works.svg" alt="" className="w-full" />
           </div>
         </div>
