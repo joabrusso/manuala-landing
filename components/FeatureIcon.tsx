@@ -46,6 +46,14 @@ const PATHS: Record<string, ReactNode> = {
       <path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" />
     </>
   ),
+  extension: (
+    <>
+      <rect x="3" y="4" width="18" height="16" rx="2.5" />
+      <line x1="3" y1="8.5" x2="21" y2="8.5" />
+      <circle cx="6.4" cy="6.25" r="0.6" fill="currentColor" stroke="none" />
+      <path d="M11.5 12l6 2.4-2.6.85-1 2.55z" />
+    </>
+  ),
 };
 
 export default function FeatureIcon({ name, className }: { name: keyof typeof PATHS; className?: string }) {
