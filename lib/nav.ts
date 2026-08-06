@@ -16,6 +16,11 @@ export const PRODUCT_LINKS = [
     label: "Manuala AI",
     desc: "Preguntale a tus procesos",
   },
+  {
+    href: "/producto/extension",
+    label: "Extensión de Chrome",
+    desc: "Capturá el proceso mientras lo hacés",
+  },
 ] as const;
 
 export const SOLUTION_LINKS = [

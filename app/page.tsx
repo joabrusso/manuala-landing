@@ -78,12 +78,6 @@ const MORE_FEATURES = [
     title: "Subí lo que ya tenés",
     body: "Grabación de pantalla, Word, Excel o PDF — no hace falta empezar de cero.",
   },
-  {
-    icon: "extension",
-    tone: "coral",
-    title: "Capturá con la extensión",
-    body: "Grabá tus clicks en cualquier web app — CRM, ERP, lo que uses — y Manuala arma el SOP solo, con las capturas de cada paso.",
-  },
 ] as const;
 
 export default function LandingPage() {
