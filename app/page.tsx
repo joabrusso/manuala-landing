@@ -230,17 +230,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ---------- Caso de éxito (mostaza pálido) ---------- */}
-      <section className="bg-mustard-soft py-20 sm:py-28">
-        <div className="mx-auto flex max-w-4xl justify-center px-6">
-          <div className="flex w-56 flex-col items-center gap-2 rounded-3xl bg-paper-0 px-8 py-10 text-center shadow-[0_1px_2px_rgba(28,27,24,0.04),0_8px_24px_rgba(28,27,24,0.05)]">
-            <img src="/illustrations/growth-stat.svg" alt="" className="h-28 w-auto" />
-            <div className="font-heading mt-2 text-5xl font-extrabold text-ink">50%</div>
-            <div className="text-sm text-ink-muted">menos tiempo de onboarding</div>
-          </div>
-        </div>
-      </section>
-
       <CtaBanner title="Empezá a documentar hoy" subtitle="Sin tarjeta de crédito. Tu primer proceso, listo en minutos." />
     </main>
   );
