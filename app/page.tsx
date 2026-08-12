@@ -118,26 +118,20 @@ export default function LandingPage() {
                 </a>
               </div>
             </div>
-            <img
-              src="/illustrations/hero-process.svg"
-              alt=""
-              className="ml-auto hidden w-full max-w-md shrink-0 lg:block"
-            />
+            <div className="ml-auto w-full max-w-md shrink-0">
+              <div className="overflow-hidden rounded-2xl bg-ink shadow-[0_1px_2px_rgba(28,27,24,0.1),0_18px_40px_rgba(28,27,24,0.25)]">
+                <div className="flex items-center gap-1.5 bg-ink px-3 py-2.5">
+                  <span className="h-2 w-2 rounded-full bg-white/25" />
+                  <span className="h-2 w-2 rounded-full bg-white/25" />
+                  <span className="h-2 w-2 rounded-full bg-white/25" />
+                  <span className="ml-1.5 text-[10px] tracking-wide text-white/40">Manuala — demo</span>
+                </div>
+                <video className="w-full" controls preload="metadata" playsInline>
+                  <source src="/video/manuala-demo.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* ---------- Video demo ---------- */}
-      <section className="bg-paper-0 py-16 sm:py-20">
-        <div className="mx-auto max-w-4xl px-6">
-          <video
-            className="w-full rounded-3xl border border-ink/10 shadow-[0_1px_2px_rgba(28,27,24,0.04),0_8px_24px_rgba(28,27,24,0.05)]"
-            controls
-            preload="metadata"
-            playsInline
-          >
-            <source src="/video/manuala-demo.mp4" type="video/mp4" />
-          </video>
         </div>
       </section>
 
