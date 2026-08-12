@@ -127,6 +127,20 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* ---------- Video demo ---------- */}
+      <section className="bg-paper-0 py-16 sm:py-20">
+        <div className="mx-auto max-w-4xl px-6">
+          <video
+            className="w-full rounded-3xl border border-ink/10 shadow-[0_1px_2px_rgba(28,27,24,0.04),0_8px_24px_rgba(28,27,24,0.05)]"
+            controls
+            preload="metadata"
+            playsInline
+          >
+            <source src="/video/manuala-demo.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </section>
+
       {/* ---------- Features ---------- */}
       <section id="producto" className="bg-paper-0 py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-6">
