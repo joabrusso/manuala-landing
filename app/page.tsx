@@ -91,9 +91,6 @@ export default function LandingPage() {
         <div className="relative mx-auto max-w-6xl px-6 pt-16 pb-20 sm:pt-20 sm:pb-28">
           <div className="flex flex-wrap items-center gap-12 lg:flex-nowrap">
             <div className="max-w-xl">
-              <p className="mb-4 inline-block rounded-full bg-white/40 px-3 py-1 text-xs font-bold tracking-wide uppercase">
-                Procesos documentados con IA
-              </p>
               <h1 className="font-heading text-4xl leading-[1.08] font-extrabold tracking-tight text-balance sm:text-5xl lg:text-6xl">
                 Documentá{" "}
                 <span className="inline-block -rotate-2 rounded-lg bg-ink px-2 text-mustard">una vez</span>, dejá de
@@ -120,12 +117,6 @@ export default function LandingPage() {
             </div>
             <div className="ml-auto w-full max-w-md shrink-0">
               <div className="overflow-hidden rounded-2xl bg-ink shadow-[0_1px_2px_rgba(28,27,24,0.1),0_18px_40px_rgba(28,27,24,0.25)]">
-                <div className="flex items-center gap-1.5 bg-ink px-3 py-2.5">
-                  <span className="h-2 w-2 rounded-full bg-white/25" />
-                  <span className="h-2 w-2 rounded-full bg-white/25" />
-                  <span className="h-2 w-2 rounded-full bg-white/25" />
-                  <span className="ml-1.5 text-[10px] tracking-wide text-white/40">Manuala — demo</span>
-                </div>
                 <video className="w-full" controls preload="metadata" playsInline>
                   <source src="/video/manuala-demo.mp4" type="video/mp4" />
                 </video>
@@ -239,24 +230,9 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ---------- Caso de éxito (split, mostaza pálido) ---------- */}
+      {/* ---------- Caso de éxito (mostaza pálido) ---------- */}
       <section className="bg-mustard-soft py-20 sm:py-28">
-        <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-14 px-6">
-          <div className="max-w-md">
-            <h2 className="font-heading text-2xl font-extrabold text-balance sm:text-3xl">
-              Menos &quot;preguntale a Fernanda&quot;
-            </h2>
-            <p className="mt-3 text-mustard-ink">
-              Los equipos que pasan sus procesos a Manuala reducen a la mitad el tiempo que les toma poner a punto a
-              alguien nuevo.
-            </p>
-            <a
-              href={APP_URL}
-              className="mt-6 inline-block rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white hover:bg-ink-muted"
-            >
-              Empezar gratis
-            </a>
-          </div>
+        <div className="mx-auto flex max-w-4xl justify-center px-6">
           <div className="flex w-56 flex-col items-center gap-2 rounded-3xl bg-paper-0 px-8 py-10 text-center shadow-[0_1px_2px_rgba(28,27,24,0.04),0_8px_24px_rgba(28,27,24,0.05)]">
             <img src="/illustrations/growth-stat.svg" alt="" className="h-28 w-auto" />
             <div className="font-heading mt-2 text-5xl font-extrabold text-ink">50%</div>
