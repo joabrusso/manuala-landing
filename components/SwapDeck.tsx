@@ -80,7 +80,8 @@ function Kv({ label, value, tone }: { label: string; value: string; tone?: "succ
   return (
     <div className="flex items-center justify-between gap-2.5">
       <b className="font-heading text-xs font-bold">{label}</b>
-      <span className={`text-[11.5px] font-bold ${tone === "success" ? "text-success" : "text-ink-faint"}`}>{value}</span>
+      {/* ink-muted y no ink-faint: a este tamaño el faint queda en 3,6:1 */}
+      <span className={`text-[11.5px] font-bold ${tone === "success" ? "text-success" : "text-ink-muted"}`}>{value}</span>
     </div>
   );
 }
@@ -354,7 +355,7 @@ export default function SwapDeck() {
               aria-hidden={rel !== 0}
             >
               <p className="text-[19px] leading-[1.32] font-medium text-[#4d4941]">&ldquo;{c.said}&rdquo;</p>
-              <div className="mt-[7px] text-xs font-semibold text-ink-faint">{c.who}</div>
+              <div className="mt-[7px] text-xs font-semibold text-ink-muted">{c.who}</div>
 
               <div className="deck-stage">
                 <div className="deck-scraps">{c.scraps}</div>

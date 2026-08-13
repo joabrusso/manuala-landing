@@ -136,7 +136,9 @@ export default function LandingPage() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid items-center gap-11 md:grid-cols-[1fr_260px]">
             <div>
-              <p className="text-xs font-bold tracking-wide text-coral uppercase">Sin escribir</p>
+              {/* El coral sobre blanco da 3,1:1 y esto es texto chico: va en
+                  ink-muted, y el color de la seccion queda en los iconos. */}
+              <p className="text-xs font-bold tracking-wide text-ink-muted uppercase">Sin escribir</p>
               <h2 className="font-heading mt-3 max-w-[20ch] text-3xl font-extrabold tracking-tight text-balance sm:text-[38px]">
                 Nada de esto lo redactás vos
               </h2>
@@ -167,7 +169,7 @@ export default function LandingPage() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid items-center gap-11 md:grid-cols-[1fr_260px]">
             <div>
-              <p className="text-xs font-bold tracking-wide text-berry uppercase">Además</p>
+              <p className="text-xs font-bold tracking-wide text-ink-muted uppercase">Además</p>
               <h2 className="font-heading mt-3 max-w-[20ch] text-3xl font-extrabold tracking-tight text-balance sm:text-[38px]">
                 Lo que aparece cuando el proceso ya existe
               </h2>
