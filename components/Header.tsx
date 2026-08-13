@@ -54,9 +54,56 @@ function NavDropdown({
   );
 }
 
+function MobileGroup({
+  title,
+  items,
+  onNavigate,
+}: {
+  title: string;
+  items: typeof PRODUCT_LINKS | typeof SOLUTION_LINKS;
+  onNavigate: () => void;
+}) {
+  return (
+    <div>
+      <h2 className="px-3 text-xs font-bold tracking-wide text-ink-muted uppercase">{title}</h2>
+      <div className="mt-1">
+        {items.map((item) => (
+          <Link key={item.href} href={item.href} onClick={onNavigate} className="block rounded-xl px-3 py-2.5 hover:bg-paper">
+            <div className="text-sm font-semibold text-ink">{item.label}</div>
+            <div className="mt-0.5 text-xs text-ink-muted">{item.desc}</div>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Header() {
   const [openMenu, setOpenMenu] = useState<MenuKey | null>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
+  const burgerRef = useRef<HTMLButtonElement>(null);
+
+  // Cierra con Escape y devuelve el foco al botón que lo abrió.
+  useEffect(() => {
+    if (!mobileOpen) return;
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setMobileOpen(false);
+        burgerRef.current?.focus();
+      }
+    }
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [mobileOpen]);
+
+  // Si la ventana pasa a tamaño desktop, el panel ya no corresponde.
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 640px)");
+    const onChange = () => mq.matches && setMobileOpen(false);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
 
   useEffect(() => {
     if (!openMenu) return;
@@ -105,13 +152,44 @@ export default function Header() {
             Iniciar sesión
           </a>
         </nav>
-        <a
-          href={APP_URL}
-          className="rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white hover:bg-ink-muted"
-        >
-          Empezar gratis
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href={APP_URL}
+            className="rounded-full bg-ink px-4 py-2 text-xs font-semibold text-white hover:bg-ink-muted sm:px-5 sm:py-2.5 sm:text-sm"
+          >
+            Empezar gratis
+          </a>
+
+          {/* Por debajo de sm la navegación se oculta, así que acá está su reemplazo */}
+          <button
+            ref={burgerRef}
+            type="button"
+            onClick={() => setMobileOpen((v) => !v)}
+            aria-expanded={mobileOpen}
+            aria-controls="menu-mobile"
+            aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
+            className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-ink/15 text-ink hover:bg-paper sm:hidden"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="h-5 w-5">
+              {mobileOpen ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
+            </svg>
+          </button>
+        </div>
       </div>
+
+      {mobileOpen && (
+        <div id="menu-mobile" className="border-t border-ink/10 sm:hidden">
+          <nav className="mx-auto max-w-6xl space-y-5 px-3 py-5">
+            <MobileGroup title="Producto" items={PRODUCT_LINKS} onNavigate={() => setMobileOpen(false)} />
+            <MobileGroup title="Soluciones" items={SOLUTION_LINKS} onNavigate={() => setMobileOpen(false)} />
+            <div className="border-t border-ink/10 pt-4">
+              <a href={APP_URL} className="block rounded-xl px-3 py-2.5 text-sm font-semibold text-ink hover:bg-paper">
+                Iniciar sesión
+              </a>
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
