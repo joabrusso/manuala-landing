@@ -58,7 +58,9 @@ export default function AskManuala() {
   const item = QA[active];
 
   return (
-    <div className="mt-9 rounded-[20px] bg-paper-0 p-[22px] shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)]">
+    // text-ink explícito: la sección que la contiene es oscura y define
+    // text-paper-0, que se heredaba y dejaba la respuesta blanca sobre blanco.
+    <div className="mt-9 rounded-[20px] bg-paper-0 p-[22px] text-ink shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)]">
       <div className="flex flex-wrap gap-2.5">
         {QA.map((qa, i) => (
           <button
@@ -108,7 +110,8 @@ export default function AskManuala() {
                   <b className="font-heading block text-[12.5px]">
                     {item.cite ? item.cite.title : "Sin proceso documentado"}
                   </b>
-                  <small className="text-[11.5px] text-ink-faint">
+                  {/* ink-muted en vez de ink-faint: a 11.5px el faint queda en 3.6:1 */}
+                  <small className="text-[11.5px] text-ink-muted">
                     {item.cite ? item.cite.meta : "Manuala no completa lo que no está escrito"}
                   </small>
                 </div>

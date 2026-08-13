@@ -112,6 +112,25 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* ---------- Manuala AI ---------- */}
+      <section className="bg-ink py-20 text-paper-0 sm:py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <p className="text-xs font-bold tracking-wide text-mustard uppercase">Manuala AI</p>
+          <h2 className="font-heading mt-3 max-w-[22ch] text-3xl font-extrabold tracking-tight text-balance sm:text-[38px]">
+            Cuando igual preguntan, no te preguntan a vos
+          </h2>
+          <p className="mt-3.5 max-w-[52ch] text-white/60">
+            Responde con los procesos que tu equipo publicó y muestra de dónde sacó cada respuesta.
+          </p>
+
+          <AskManuala />
+
+          <p className="mt-3.5 text-sm text-white/50">
+            Si algo no está documentado lo dice, en vez de completarlo por su cuenta.
+          </p>
+        </div>
+      </section>
+
       {/* ---------- Cómo entra el contenido ---------- */}
       <section id="entra" className="bg-paper-0 py-20 sm:py-24">
         <div className="mx-auto max-w-6xl px-6">
@@ -172,25 +191,6 @@ export default function LandingPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ---------- Manuala AI ---------- */}
-      <section className="bg-ink py-20 text-paper-0 sm:py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <p className="text-xs font-bold tracking-wide text-mustard uppercase">Manuala AI</p>
-          <h2 className="font-heading mt-3 max-w-[22ch] text-3xl font-extrabold tracking-tight text-balance sm:text-[38px]">
-            Cuando igual preguntan, no te preguntan a vos
-          </h2>
-          <p className="mt-3.5 max-w-[52ch] text-white/60">
-            Responde con los procesos que tu equipo publicó y muestra de dónde sacó cada respuesta.
-          </p>
-
-          <AskManuala />
-
-          <p className="mt-3.5 text-sm text-white/50">
-            Si algo no está documentado lo dice, en vez de completarlo por su cuenta.
-          </p>
         </div>
       </section>
 
