@@ -25,7 +25,9 @@ export default function Page() {
         subtitle="Todos los planes incluyen el asistente de IA, pasos condicionales y knowledge graph. Empezá gratis, sin tarjeta de crédito."
       />
 
-      <section className="bg-paper py-16 sm:py-20">
+      {/* Mismo fondo que el PageHero de arriba: sin padding-top propio para
+          no sumar dos espaciados seguidos (era el hueco grande antes de las tarjetas). */}
+      <section className="bg-paper pb-16 sm:pb-20">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-6 lg:grid-cols-3">
             <PricingCard
