@@ -1,4 +1,4 @@
-import { APP_URL } from "@/lib/nav";
+import { APP_URL, CONTACT_EMAIL } from "@/lib/nav";
 import Spark from "@/components/Spark";
 
 export default function CtaBanner({ title, subtitle }: { title: string; subtitle: string }) {
@@ -22,7 +22,7 @@ export default function CtaBanner({ title, subtitle }: { title: string; subtitle
               Empezar gratis
             </a>
             <a
-              href="mailto:hola@manuala.app"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="rounded-full border-2 border-ink px-7 py-3.5 text-sm font-semibold hover:bg-ink/5"
             >
               Hablar con nosotros

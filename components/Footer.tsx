@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
-import { APP_URL, PRODUCT_LINKS, SOLUTION_LINKS } from "@/lib/nav";
+import { APP_URL, CONTACT_EMAIL, PRODUCT_LINKS, SOLUTION_LINKS } from "@/lib/nav";
 
 export default function Footer() {
   return (
@@ -46,8 +46,13 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:hola@manuala.app" className="hover:underline">
-                  Hablar con nosotros
+                <Link href="/contacto" className="hover:underline">
+                  Contacto
+                </Link>
+              </li>
+              <li>
+                <a href={`mailto:${CONTACT_EMAIL}`} className="hover:underline">
+                  {CONTACT_EMAIL}
                 </a>
               </li>
             </ul>

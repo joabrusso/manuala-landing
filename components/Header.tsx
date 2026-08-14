@@ -148,6 +148,12 @@ export default function Header() {
             onToggle={(key) => setOpenMenu((current) => (current === key ? null : key))}
             onClose={() => setOpenMenu(null)}
           />
+          <Link href="/precios" className="hover:underline">
+            Precios
+          </Link>
+          <Link href="/contacto" className="hover:underline">
+            Contacto
+          </Link>
           <a href={APP_URL} className="hover:underline">
             Iniciar sesión
           </a>
@@ -183,6 +189,20 @@ export default function Header() {
             <MobileGroup title="Producto" items={PRODUCT_LINKS} onNavigate={() => setMobileOpen(false)} />
             <MobileGroup title="Soluciones" items={SOLUTION_LINKS} onNavigate={() => setMobileOpen(false)} />
             <div className="border-t border-ink/10 pt-4">
+              <Link
+                href="/precios"
+                onClick={() => setMobileOpen(false)}
+                className="block rounded-xl px-3 py-2.5 text-sm font-semibold text-ink hover:bg-paper"
+              >
+                Precios
+              </Link>
+              <Link
+                href="/contacto"
+                onClick={() => setMobileOpen(false)}
+                className="block rounded-xl px-3 py-2.5 text-sm font-semibold text-ink hover:bg-paper"
+              >
+                Contacto
+              </Link>
               <a href={APP_URL} className="block rounded-xl px-3 py-2.5 text-sm font-semibold text-ink hover:bg-paper">
                 Iniciar sesión
               </a>

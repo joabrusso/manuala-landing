@@ -10,7 +10,7 @@ export default function PageHero({
   eyebrow: string;
   title: ReactNode;
   subtitle: string;
-  illustration: string;
+  illustration?: string;
 }) {
   return (
     <section className="bg-paper py-16 sm:py-20">
@@ -32,7 +32,7 @@ export default function PageHero({
             </a>
           </div>
         </div>
-        <img src={illustration} alt="" className="ml-auto hidden w-full max-w-sm shrink-0 lg:block" />
+        {illustration && <img src={illustration} alt="" className="ml-auto hidden w-full max-w-sm shrink-0 lg:block" />}
       </div>
     </section>
   );
