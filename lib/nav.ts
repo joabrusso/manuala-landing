@@ -1,5 +1,6 @@
 export const APP_URL = "https://use.manuala.app";
 export const CONTACT_EMAIL = "info@manuala.app";
+export const SITE_URL = "https://manuala.app";
 
 export const PRODUCT_LINKS = [
   {
