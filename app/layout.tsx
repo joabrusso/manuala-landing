@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SITE_URL } from "@/lib/nav";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const TITLE = "Manuala — Software para crear SOPs y capacitar a tu equipo con IA";
