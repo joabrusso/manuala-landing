@@ -41,4 +41,14 @@ export const SOLUTION_LINKS = [
     label: "Cumplimiento",
     desc: "Sabé quién hizo qué, sin perseguir a nadie",
   },
+  {
+    href: "/sop-para-retail",
+    label: "Retail y comercio",
+    desc: "Que todas las sucursales hagan lo mismo",
+  },
+  {
+    href: "/sop-logistica",
+    label: "Logística y distribución",
+    desc: "Picking, empaque y recepción sin sorpresas",
+  },
 ] as const;
