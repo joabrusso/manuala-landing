@@ -151,6 +151,9 @@ export default function Header() {
           <Link href="/precios" className="hover:underline">
             Precios
           </Link>
+          <Link href="/blog" className="hover:underline">
+            Blog
+          </Link>
           <Link href="/contacto" className="hover:underline">
             Contacto
           </Link>
@@ -195,6 +198,13 @@ export default function Header() {
                 className="block rounded-xl px-3 py-2.5 text-sm font-semibold text-ink hover:bg-paper"
               >
                 Precios
+              </Link>
+              <Link
+                href="/blog"
+                onClick={() => setMobileOpen(false)}
+                className="block rounded-xl px-3 py-2.5 text-sm font-semibold text-ink hover:bg-paper"
+              >
+                Blog
               </Link>
               <Link
                 href="/contacto"

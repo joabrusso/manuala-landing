@@ -168,3 +168,54 @@ body::before {
   .deck { height: 424px; }
   .deck-stage { min-height: 254px; }
 }
+
+/* Cuerpo de un artículo del blog (MDX renderizado) -- a mano en vez de
+   @tailwindcss/typography para no sumar un plugin nuevo por esto solo;
+   son pocas reglas y ya usan las mismas variables de color del resto. */
+.prose-manuala {
+  max-width: 68ch;
+  color: var(--color-ink);
+  line-height: 1.75;
+}
+.prose-manuala h2 {
+  margin-top: 2.5em;
+  margin-bottom: 0.6em;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.prose-manuala h3 {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.prose-manuala p {
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+}
+.prose-manuala ul,
+.prose-manuala ol {
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  padding-left: 1.4em;
+}
+.prose-manuala ul { list-style: disc; }
+.prose-manuala ol { list-style: decimal; }
+.prose-manuala li { margin-top: 0.4em; }
+.prose-manuala li::marker { color: var(--color-mustard-ink); }
+.prose-manuala strong { font-weight: 700; }
+.prose-manuala a {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-manuala blockquote {
+  margin: 1.6em 0;
+  padding-left: 1.2em;
+  border-left: 3px solid var(--color-mustard);
+  color: var(--color-ink-muted);
+  font-style: italic;
+}
