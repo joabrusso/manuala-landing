@@ -3,11 +3,10 @@ import { Analytics } from "@vercel/analytics/next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SITE_URL } from "@/lib/nav";
+import { DESCRIPTION, jsonLdGraph } from "@/lib/jsonld";
 import "./globals.css";
 
 const TITLE = "Manuala — Software para crear SOPs y capacitar a tu equipo con IA";
-const DESCRIPTION =
-  "Grabá la pantalla, subí un documento o contale el proceso a la IA: Manuala arma el instructivo, lo asigna a tu equipo y controla que lo cumplan. Documentación de procesos y capacitación de empleados en una sola plataforma. Prueba gratis, sin tarjeta.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -16,6 +15,14 @@ export const metadata: Metadata = {
     template: "%s | Manuala",
   },
   description: DESCRIPTION,
+  keywords: [
+    "alternativa a Trainual",
+    "software para documentación operativa",
+    "plataforma capacitación equipos LatAm",
+    "SOP software",
+    "documentación de procesos",
+    "software onboarding empleados",
+  ],
   alternates: {
     canonical: "/",
   },
@@ -42,16 +49,6 @@ export const viewport: Viewport = {
   themeColor: "#f8c94a",
 };
 
-const softwareApplicationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Manuala",
-  description: DESCRIPTION,
-  url: SITE_URL,
-  applicationCategory: "BusinessApplication",
-  operatingSystem: "Web",
-};
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
@@ -59,7 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
         />
         <Header />
         {children}
