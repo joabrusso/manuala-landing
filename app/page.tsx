@@ -84,7 +84,7 @@ export default function LandingPage() {
             <div>
               <h1 className="font-heading text-4xl leading-[1.05] font-extrabold tracking-tight text-balance sm:text-5xl lg:text-[56px]">
                 Documentá{" "}
-                <span className="inline-block -rotate-2 rounded-lg bg-ink px-2 text-mustard">una vez</span>, dejá de
+                <span className="inline-block -rotate-2 rounded-lg bg-ink px-2 text-mustard">una vez</span> dejá de
                 explicar mil.
               </h1>
               <p className="mt-5 max-w-md text-lg text-ink/80">
