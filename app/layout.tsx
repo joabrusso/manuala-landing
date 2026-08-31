@@ -6,7 +6,7 @@ import { SITE_URL } from "@/lib/nav";
 import { DESCRIPTION, jsonLdGraph } from "@/lib/jsonld";
 import "./globals.css";
 
-const TITLE = "Manuala — Software para crear SOPs y capacitar a tu equipo con IA";
+const TITLE = "Manuala — SOPs y onboarding de equipos con IA";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
