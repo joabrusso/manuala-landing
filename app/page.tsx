@@ -1,5 +1,6 @@
 import Blob from "@/components/Blob";
 import CtaBanner from "@/components/CtaBanner";
+import FaqSection from "@/components/FaqSection";
 import FeatureIcon from "@/components/FeatureIcon";
 import SwapDeck from "@/components/SwapDeck";
 import AskManuala from "@/components/AskManuala";
@@ -195,6 +196,8 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+
+      <FaqSection />
 
       <CtaBanner
         title="Empezá con un proceso"

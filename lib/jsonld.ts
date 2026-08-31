@@ -1,7 +1,11 @@
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/nav";
 
 export const DESCRIPTION =
-  "Grabá la pantalla, subí un documento o contale el proceso a la IA: Manuala arma el instructivo, lo asigna a tu equipo y controla que lo cumplan. Documentación de procesos y capacitación de empleados en una sola plataforma. Prueba gratis, sin tarjeta.";
+  "Documentá los procesos de tu negocio con IA y capacitá a tu equipo: grabá la pantalla, subí un documento o contale a la IA. Prueba gratis, sin tarjeta.";
+
+// Fecha del último cambio de contenido relevante para SEO (title, description,
+// FAQ). Actualizar a mano cuando se toque alguno de esos textos.
+export const CONTENT_LAST_MODIFIED = "2026-08-31";
 
 const organizationJsonLd = {
   "@type": "Organization",
@@ -24,6 +28,7 @@ const softwareApplicationJsonLd = {
   url: SITE_URL,
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
+  dateModified: CONTENT_LAST_MODIFIED,
   offers: [
     {
       "@type": "Offer",
@@ -49,34 +54,37 @@ const softwareApplicationJsonLd = {
   ],
 };
 
+// Fuente única para el FAQ: de acá sale tanto el JSON-LD como el bloque
+// visible en la página (antes estaban duplicados y el schema no tenía
+// contenido visible que lo respalde -- Google marca eso como mala práctica).
+export const FAQ_ITEMS = [
+  {
+    question: "¿Cuál es la alternativa a Trainual para equipos en LatAm?",
+    answer:
+      "Manuala es una alternativa a Trainual pensada para equipos en LatAm: documentás SOPs, capacitás a tu equipo y controlás el cumplimiento, con un asistente de IA que responde en base a tus propios procesos.",
+  },
+  {
+    question: "¿Cómo genero un SOP sin redactarlo a mano?",
+    answer:
+      "Manuala acepta tres formas de entrada: grabación de pantalla, un documento (PDF o Word), o contarle el proceso a la IA por chat. Elegís una, y Manuala arma el instructivo estructurado automáticamente.",
+  },
+  {
+    question: "¿Cuánto cuesta Manuala?",
+    answer:
+      "Starter $59/mes (10 usuarios), Growth $129/mes (30 usuarios), Scale $249/mes (100 usuarios). Sin contrato, empezás gratis sin tarjeta de crédito.",
+  },
+] as const;
+
 const faqJsonLd = {
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "¿Cuál es la alternativa a Trainual para equipos en LatAm?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Manuala es una alternativa a Trainual pensada para equipos en LatAm: documentás SOPs, capacitás a tu equipo y controlás el cumplimiento, con un asistente de IA que responde en base a tus propios procesos.",
-      },
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
     },
-    {
-      "@type": "Question",
-      name: "¿Cómo genero un SOP sin redactarlo a mano?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Manuala acepta tres formas de entrada: grabación de pantalla, un documento (PDF o Word), o contarle el proceso a la IA por chat. Elegís una, y Manuala arma el instructivo estructurado automáticamente.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "¿Cuánto cuesta Manuala?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Starter $59/mes (10 usuarios), Growth $129/mes (30 usuarios), Scale $249/mes (100 usuarios). Sin contrato, empezás gratis sin tarjeta de crédito.",
-      },
-    },
-  ],
+  })),
 };
 
 export const jsonLdGraph = {
